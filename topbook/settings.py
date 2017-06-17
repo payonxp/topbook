@@ -14,7 +14,7 @@ BOT_NAME = 'topbook'
 SPIDER_MODULES = ['topbook.spiders']
 NEWSPIDER_MODULE = 'topbook.spiders'
 
-FEED_URI='/Users/morroc/Desktop/topbook/spider/comments.json'
+FEED_URI='../spider/comments.json'
 FEED_FORMAT='JSON'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'topbook (+http://www.yourdomain.com)'
