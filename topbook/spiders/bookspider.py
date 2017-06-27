@@ -62,9 +62,13 @@ class DoubanBookTop250Spider(Spider):
                     yield Request(response.url + next_urls[len(next_urls) - 1], headers=self.headers)
 
     def checkUrl(self, url):
-        u = self.urls.find_one({"url": url})
-        if u is None:
-            self.urls.insert_one({"url": url})
+        try:
+            u = self.urls.find_one({"url": url})
+            if u is None:
+                self.urls.insert_one({"url": url})
+                return True
+            else:
+                return False
+        except Exception as err:
+            print(err)
             return True
-        else:
-            return False
